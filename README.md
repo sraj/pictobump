@@ -15,9 +15,9 @@ npm install socket.io
         node server.js (runs on 4000)
 
 
-![](https://github.com/sraj/pictobump/assets/img/draw.png)
+![](https://github.com/sraj/pictobump/blob/master/assets/img/draw.png)
 
-![](https://github.com/sraj/pictobump/assets/img/home.png)
+![](https://github.com/sraj/pictobump/blob/master/assets/img/home.png)
 
-![](https://github.com/sraj/pictobump/assets/img/invite.png)
+![](https://github.com/sraj/pictobump/blob/master/assets/img/invite.png)
 
