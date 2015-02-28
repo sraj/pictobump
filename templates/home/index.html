@@ -1,0 +1,39 @@
+{% extends "home/_base.html" %}
+{% block module_title %}{{ "Home" }}{% endblock %}
+{% block content %}
+<div class="row">
+	<div class="span12" align="center">
+		<a class="btn btn-large btn-success" href="/invite">Pictobump with your facebook friends</a>
+	</div>	
+</div>
+<div class="row" style="margin: 50px auto;">
+	<div class="span4 offset1">
+		<h3>Invitees</h3>
+		<hr>
+		<ul>
+			{% for picto in pictoList %}
+			<li>
+				<img width="20" height="20" src="https://graph.facebook.com/{{ picto.frndid }}/picture?type=square"/>
+				<a href="/picto/{{ picto.pictoid }}">Play with {{ picto.frndname }}</a>
+			</li>
+			{% else %}
+			<li> No records </li>
+			{% endfor %}	
+  		</ul>
+	</div>
+	<div class="span4  offset1">
+		<h3>Invites</h3>
+		<hr>
+		<ul>
+			{% for invite in inviteList %}
+			<li>
+				<img width="20" height="20" src="https://graph.facebook.com/{{ invite.userid }}/picture?type=square"/>
+				<a href="/picto/{{ invite.pictoid }}">Play with {{ invite.username }}</a>
+			</li>
+			{% else %}
+			<li> No records </li>
+			{% endfor %}	
+  		</ul>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "auth/_base.html" %}
+{% block module_title %}{{ "Sign in" }}{% endblock %}
+{% block content %}
+<div class="row">
+	<div align="center"><h1>Welcome to Pictobump</h1><hr></div>
+  <div class="span8">
+		<div id="myCarousel" class="carousel slide">
+		  <!-- Carousel items -->
+		  <div class="carousel-inner">
+              <div class="item active">
+                <img src="/assets/img/home.png" alt="">
+                <div class="carousel-caption">
+                  <h4>Pictobump Home</h4>
+                </div>
+              </div>
+              <div class="item">
+                <img src="/assets/img/invite.png" alt="">
+                <div class="carousel-caption">
+                  <h4>Invite Friends</h4>
+                </div>
+              </div>
+              <div class="item">
+                <img src="/assets/img/draw.png" alt="">
+                <div class="carousel-caption">
+                  <h4>Play with Friend</h4>
+                </div>
+              </div>
+            </div>
+		  <!-- Carousel nav -->
+		  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+		  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+		</div>
+	</div>	
+	<div class="span4" align="center">	
+		<form action="/auth/facebook" method="POST" class="pull-left" enctype="application/x-www-form-urlencoded">
+	        <button class="btn btn-primary btn-large" type="submit"><i class="browser-icon" style="background-image:url('https://www.google.com/s2/u/0/favicons?domain=www.facebook.com')"></i> &nbsp;<b>Sign in with Facebook</b></button>
+	        <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+	    </form>
+	</div>
+</div>
+{% endblock %}

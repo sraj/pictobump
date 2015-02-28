@@ -1,0 +1,23 @@
+{% extends "home/_base.html" %}
+{% block module_title %}{{ "Invite" }}{% endblock %}
+{% block content %}
+<div class="row-fluid">
+	<div class="span12">
+		<h2>Select a friend to play</h2>
+		<hr>
+		<ul>
+		{%- for frnd in frndsList %}
+			<li class="span3 pull-left" style="margin-left: 0%; margin-bottom: 1%;"><img width="20" height="20" src="https://graph.facebook.com/{{ frnd['id'] }}/picture?type=square"/><a href="/invite/{{ frnd['id'] }}"> {{ frnd['name'] | truncate(26, True)}}</a></li>
+  		{% else %}
+			<li> No records </li>    
+  		{% endfor -%}
+  		</ul>
+	</div>
+	<div class="pagination pagination-right">
+        <ul>
+          {% if page > 1 %}<li><a href="/invite/?page={{ page - 1 }}">Previous</a></li>{% endif %}
+          <li><a href="/invite/?page={{ page + 1 }}">Next</a></li>
+        <ul>
+    </div>
+</div>
+{% endblock %}

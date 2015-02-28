@@ -1,0 +1,30 @@
+{% extends "picto/_base.html" %}
+{% block module_title %}{{ "Draw with Friend" }}{% endblock %}
+{% block content %}
+<div class="span7 pull-left" style="border:1px dashed gray;"><canvas id="js-canvas-draw"></canvas></div>
+<div class="span4 pull-left well well-small" style="margin-top:10px;">
+  	<div>  
+	    <form class="form-inline" id="js-guess-form" onsubmit="return false;">
+			<div class="control-group" style="margin-left: 10px;">
+				<input type="text" name="guess-input" class="input-medium" placeholder="Guess...?">
+				<button type="button" class="btn btn-primary" id="js-submit">Submit</button>
+			</div>
+			<div class="control-group" style="margin-left: 10px;" id="js-guess-result">
+			</div>  
+	    </form>
+  	</div>  
+</div>
+<script type="text/javascript">
+	var PBData = {
+		USERID:"{{ g.auth.fbid }}",
+		PICTOID:"{{ opicto.pictoid }}",
+		NAME:"{{ g.auth.name }}",
+		FRNDNAME:"{{ opicto.friendname }}",
+		IS_OWNER:{{opicto.is_owner | lower }}
+	};
+</script>
+{% endblock %}
+
+{%- block module_js %}
+<script src="/assets/js/scripts.js"></script>
+{% endblock -%}
